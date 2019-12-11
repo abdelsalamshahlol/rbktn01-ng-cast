@@ -2,8 +2,10 @@ angular.module('video-player')
 .component('app', {
   controller : function(){
     this.videoData = window.exampleVideoData;
-    this.onClick = ()=>{
-      console.log("jhdf")
+    this.currentVideo = this.videoData[0];
+    this.onClick = (video)=>{
+      this.currentVideo = video;
+      // console.log("video", video)
     }
     console.log(this.videoData)
   },

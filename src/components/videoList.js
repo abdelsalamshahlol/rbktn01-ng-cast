@@ -1,10 +1,6 @@
 angular.module('video-player')
 .component('videoList', {
-  controller : function($scope){
-    //  this.onClick = ()=> {
-    //    console.log('clicked')
-    //  }
-  },
+  controller : angular.noop,
   bindings : {
     videos: "=",
     onClick: "<"
