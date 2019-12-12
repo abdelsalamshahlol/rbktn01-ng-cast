@@ -1,9 +1,10 @@
 angular.module('video-player')
 .component('videoList', {
   controller : function($scope){
-    //  this.onClick = ()=> {
-    //    console.log('clicked')
-    //  }
+     this.onVideoList = (video)=> {
+       $ctrl.onClick({video:video});
+       console.log('clicked', video)
+     }
   },
   bindings : {
     videos: "=",
