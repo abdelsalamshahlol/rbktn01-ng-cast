@@ -11,13 +11,13 @@ angular.module('video-player')
         type: 'video'
       },
   }
-  callback([1,2,3,4]);
-  return [{},{}];
+  // callback([1,2,3,4]);
+  // return [{},{}];
   return $http.get('https://www.googleapis.com/youtube/v3/search', config)
-        .then(function successCallback(response) {
+        .then(function successCallback({data}) {
           console.log('Data from API received');
-          console.log(response)
-          //callback(response)
+          console.log(data)
+          callback(data.items)
         });
   }
 });

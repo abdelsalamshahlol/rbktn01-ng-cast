@@ -13,12 +13,22 @@ angular.module('video-player')
     // This is the callback fuction
     this.searchResults = (data)=> {
       this.videos = data;
-      console.log('search result '+ data);
+      this.currentVideo = data[0];
+
+      console.log('search result ', data);
     }
-    
-    // this.result = ()=> {
-    // }
-    console.log(this.videos)
+
+    // Initialize the app with data from API (IIFE)
+    // (()=>{
+      let options = {
+        key: window.YOUTUBE_API_KEY,
+        max: 5,
+        q: 'Cats',
+      }
+
+      youTube.search(options, this.searchResults);
+    // })()
+    // console.log(this.videos)
 },
   templateUrl: 'src/templates/app.html'
 });
