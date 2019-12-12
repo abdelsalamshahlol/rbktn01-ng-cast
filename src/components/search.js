@@ -1,12 +1,15 @@
 angular.module('video-player')
 .component('search', {
-  controller: function() {
-    // this.result = ()=> {
-
+  controller: function($scope) {
+    // this.getVideos = ()=>{
+    //   // Call the method passed from parent on input
+    //   console.log('searching...');
+    //   console.log($scope.input);
     // }
   },
   bindings: {
-    result: '<',
+    // search: '<',
+    result: '=',
   },
   templateUrl:'src/templates/search.html',
 });
