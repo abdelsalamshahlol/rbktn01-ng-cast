@@ -7,7 +7,7 @@ angular.module('video-player')
 
     this.selectVideo = (video)=>{
       this.currentVideo = video;
-      console.log("Video selected " + JSON.stringify({video}));
+      console.log("Video selected =>", video.snippet.title);
     }
 
     // This is the callback fuction
@@ -18,16 +18,13 @@ angular.module('video-player')
       console.log('search result ', data);
     }
 
-    // Initialize the app with data from API (IIFE)
-    // (()=>{
-      let options = {
+    let options = {
         key: window.YOUTUBE_API_KEY,
         max: 5,
         q: 'Cats',
-      }
+    }
 
-      youTube.search(options, this.searchResults);
-    // })()
+    youTube.search(options, this.searchResults);
     // console.log(this.videos)
 },
   templateUrl: 'src/templates/app.html'
