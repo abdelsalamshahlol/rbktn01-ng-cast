@@ -1,6 +1,6 @@
 angular.module('video-player')
 .component('search', {
-  controller: function($scope, youTube) {
+  controller: function($scope) {
     this.search = ()=>{
       // Call the method passed from parent on input
       // console.log('searching...', $scope.input);
@@ -11,7 +11,7 @@ angular.module('video-player')
         q: $scope.input
       }
       // console.log(options)
-      youTube.search(options, this.result);
+      this.service.search(options, this.result);
     }
   },
   bindings: {

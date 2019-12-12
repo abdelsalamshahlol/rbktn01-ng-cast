@@ -4,7 +4,8 @@ angular.module('video-player')
     // State of the component
     this.videos = window.exampleVideoData;
     this.currentVideo = this.videos[0];
-
+    this.youTubeService = youTube;
+    
     this.selectVideo = (video)=>{
       this.currentVideo = video;
       // console.log("Video selected =>", video.snippet.title);
