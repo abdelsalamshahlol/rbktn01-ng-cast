@@ -7,7 +7,7 @@ angular.module('video-player')
 
     this.selectVideo = (video)=>{
       this.currentVideo = video;
-      console.log("Video selected =>", video.snippet.title);
+      // console.log("Video selected =>", video.snippet.title);
     }
 
     // This is the callback fuction
@@ -15,7 +15,7 @@ angular.module('video-player')
       this.videos = data;
       this.currentVideo = data[0];
 
-      console.log('search result ', data);
+      // console.log('search result ', data);
     }
 
     let options = {
