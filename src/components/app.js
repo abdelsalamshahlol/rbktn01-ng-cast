@@ -10,19 +10,10 @@ angular.module('video-player')
       console.log("Video selected " + JSON.stringify({video}));
     }
 
-    this.searchResults = (query)=> {
-    // Call search service and return the results
-    console.log($scope.input,query);
-
-      let options = {
-        key: window.YOUTUBE_API_KEY,
-        max: 5,
-        q: $scope.input
-      }
-
-      let data = youTube.getData(options);
-      console.log(data)
-
+    // This is the callback fuction
+    this.searchResults = (data)=> {
+      this.videos = data;
+      console.log('search result '+ data);
     }
     
     // this.result = ()=> {
