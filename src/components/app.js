@@ -1,14 +1,20 @@
 angular.module('video-player')
 .component('app', {
   controller : function($scope) {
-    this.videoData = window.exampleVideoData;
-    this.currentVideo = this.videoData[0];
+    this.videos = window.exampleVideoData;
+    this.currentVideo = this.videos[0];
 
-    this.onClick = (video)=>{
+    this.selectVideo = (video)=>{
       this.currentVideo = video;
-      console.log("jhdf");
+      console.log("Video selected " + JSON.stringify({video}));
     }
-    console.log(this.videoData)
-  },
-  templateUrl: '../src/templates/app.html'
+
+    this.searchResults = ()=> {
+    }
+  
+    this.result = ()=> {
+    }
+    console.log(this.videos)
+},
+  templateUrl: 'src/templates/app.html'
 });
