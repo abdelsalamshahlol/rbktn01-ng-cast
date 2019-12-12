@@ -1,9 +1,9 @@
 angular.module('video-player')
 .service('youTube', function($http) {
-  this.search = function({key, q, max}, callback) {
+  this.search = function({q, max}, callback) {
     let config = {
       params:{
-        key: key,
+        key: window.YOUTUBE_API_KEY,
         q: q,
         maxResults: max,
         part: 'snippet',
@@ -19,6 +19,10 @@ angular.module('video-player')
           // console.log('Data from API received');
           // console.log(data)
           callback(data.items)
+        })
+        .catch((e)=> {
+          console.error('Some error occurred');
+          console.error(e);
         });
   }
 });

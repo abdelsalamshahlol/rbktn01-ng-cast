@@ -20,7 +20,6 @@ angular.module('video-player')
     }
 
     let options = {
-        key: window.YOUTUBE_API_KEY,
         max: 5,
         q: 'Cats',
     }
